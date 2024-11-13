@@ -1,0 +1,270 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    font-family: Arial, sans-serif;
+    background-color: #CBD2A4;
+    scroll-behavior: smooth; /* Add smooth scrolling */
+    display: flex;
+    flex-direction: column;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+header, section {
+    flex: 1;
+}
+
+#home {
+    width: 100%;
+    min-height: 100vh; /* Ensure it takes up at least the full viewport height */
+    background-image: url("https://img.freepik.com/premium-photo/large-collection-books-modern-library-generated-by-ai_188544-184838.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column; /* Ensure content is stacked vertically */
+    align-items: center; /* Center content horizontally */
+    justify-content: center; /* Center content vertically */
+    color: white;
+    text-align: center;
+}
+
+header {
+    margin-bottom: 0;
+    background-color: #E9EED9;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.navbar-image-link {
+    margin-left: 0px; /* Adjust the value to move the image to the right */
+}
+
+.nav-link {
+    color: black; /* Default text color */
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s; /* Add transition for smooth effect */
+}
+
+.nav-link:hover {
+    background-color: orange; /* Background color when hovered */
+    color: white; /* Text color when hovered */
+}
+
+.navbar-image {
+    width: 60px;
+    height: 60px;
+    animation: bounce 2s infinite; /* Apply bounce animation */
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-30px);
+    }
+    60% {
+        transform: translateY(-15px);
+    }
+}
+
+table {
+    margin: 20px auto; /* Center the table */
+    border-collapse: collapse; /* Ensure the table cells are properly aligned */
+    color: #FFFFDD;
+    animation: fadeIn 2s; /* Apply fade-in animation */
+    width: 90%; /* Make the table responsive */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+table td {
+    padding: 10px; /* Add padding to the table cells */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Add a subtle shadow to the text */
+}
+
+h1, h2, h3 {
+    text-align: center;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Add a subtle shadow to the text */
+}
+
+footer {
+    background-color: #80BCBD;
+
+   
+   min-height: auto; /* Set the height of the footer */
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+  
+    position: relative;
+    margin-top: auto;
+    
+  
+ 
+}
+
+/* Animation for text */
+@keyframes fadeInText {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 10;
+    }
+}
+
+#our, #website {
+    opacity: 0; /* Initially hide the text */
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .navbar-image {
+        width: 50px;
+        height: 50px;
+    }
+
+    .nav-link {
+        padding: 8px;
+    }
+
+    table {
+        width: 100%; /* Make the table take full width on smaller screens */
+    }
+
+    table td {
+        padding: 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar {
+        align-items: center;
+    }
+
+    .navbar-image {
+        width: 40px;
+        height: 40px;
+    }
+
+    .nav-link {
+        padding: 6px;
+    }
+
+    table td {
+        padding: 6px;
+    }
+}
+a{
+    background-color: #80BCBD;
+}
+
+#trending{
+    margin-left: 10px;
+
+}
+
+.book-carousel {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    min-height: max-content;
+}
+
+.book-carousel-inner {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.book-item {
+    min-width: 20%; /* Show 5 books at a time */
+    box-sizing: border-box;
+    padding: 10px;
+}
+
+.book-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.carousel-prev, .carousel-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.carousel-prev {
+    left: 10px;
+}
+
+.carousel-next {
+    right: 10px;
+}
+
+@media (max-width: 768px) {
+    .book-item {
+        min-width: 50%; /* Show 2 books at a time on smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .book-item {
+        min-width: 100%; /* Show 1 book at a time on very small screens */
+    }
+}
+
+.book-item img {
+    width: 100%;
+   /* Set a fixed height for the images */
+    object-fit: cover; /* Maintain aspect ratio and cover the area */
+    display: block;
+    border-radius: 10px;
+}
+
+.book-item img {
+    transition: transform 0.1s ease;
+}
+
+.book-item img:hover {
+    transform: scale(1.05);
+}
+#about{
+        background-color: #B9E5E8;
+        font-style: italic;
+    font-weight: bold;
+    font-display: serif;
+    fill-opacity: inherit;
+}
+

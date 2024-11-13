@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BOOK RECOMMENDATION</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</head>
+<body>
+    <header>
+                <nav class="navbar">
+            <img src="{{ url_for('static', filename='image.webp') }}" class="navbar-image" style="width: 60px;height: 60px;">
+            <a href="#home" class="nav-link" onclick="loadContent('home'); return false;">Home</a>
+            <a href="#about" class="nav-link" onclick="loadContent('about'); return false;">About</a>
+            <a href="#trending" class="nav-link" onclick="loadContent('trending'); return false;">Trending</a>
+            <!-- Replace the recommendation link in the navbar with: -->
+            <a href="{{ url_for('recommendation') }}" class="nav-link">Recommendation</a>        </nav>
+    </header>
+    <section id="home">
+        
+                    <h1>Welcome to </h1>
+                    <h1>Our Website!</h1>
+                    <pre>Here you can find
+the best book recommendations
+according to your taste.</pre>
+
+        
+    </section>
+    <section id="content">
+        <!-- Dynamic content will be loaded here -->
+    </section>
+   
+
+
+   
+
+       <section id="trending">
+        <!-- <h1 style="text-align: center;">Trending Section</h1> -->
+        <p style="margin-left: 20px;"><b>TOP 10 HORROR BOOKS</b></p>
+        <div class="book-carousel" id="horror-carousel">
+            <div class="book-carousel-inner ">
+                <div class="book-item"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhfkhABbTkziD6KyY00SwhTj-UC--3pqTKLw&s" alt="Book 1"></div>
+                <div class="book-item"><img src="https://bookskhareedo.com/wp-content/uploads/2022/08/cursed-child_1800x1800.jpg" alt="Book 2"></div>
+                <div class="book-item"><img src="https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1669061771-best-horror-books-last-house-needless-1669061707.jpg?crop=1xw:0.98671875xh;center,top&resize=980:*" alt="Book 3"></div>
+                <div class="book-item"><img src="https://egs3h68r5ni.exactdn.com/wp-content/uploads/2021/06/The-Demonic-adult-horror-book.jpg?strip=all&lossy=1&ssl=1" alt="Book 4"></div>
+                <div class="book-item"><img src="https://hufftravels.wordpress.com/wp-content/uploads/2019/01/best-ever-cookie-recipes-4.png?w=735" alt="Book 5"></div>
+                <div class="book-item"><img src="https://static01.nyt.com/images/2016/10/30/books/30Horror-RAFFERTY-1/30Horror-RAFFERTY-1-articleLarge.jpg?quality=75&auto=webp&disable=upscale" alt="Book 6"></div>
+                <div class="book-item"><img src="https://images-us.bookshop.org/ingram/9781501144837.jpg?height=500&v=v2" alt="Book 7"></div>
+                <div class="book-item"><img src="https://images-us.bookshop.org/ingram/9781501144820.jpg?height=500&v=v2-2138bb887db205c8133a80a8cc588acc" alt="Book 8"></div>
+                <div class="book-item"><img src="https://images-us.bookshop.org/ingram/9780061124297.jpg?height=500&v=v2" alt="Book 9"></div>
+                <div class="book-item"><img src="https://m.media-amazon.com/images/I/61pjyMrRCSL._AC_UF1000,1000_QL80_.jpg" alt="Book 10"></div>
+            </div>
+            <button class="carousel-prev" >&#10094;</button>
+            <button class="carousel-next" >&#10095;</button>
+        </div>
+        <p style="margin-left: 20px;"><b>TOP 10 FICTIONAL BOOKS</b></p>
+        <div class="book-carousel" id ="fiction-carousel">
+            <div class="book-carousel-inner">
+                <div class="book-item"><img src="https://cdn.shopify.com/s/files/1/0648/3066/9017/files/816Jk3XwEbL._SL1500_360x.jpg?v=1728561524" alt="Book 1"></div>
+                <div class="book-item"><img src="https://cdn.shopify.com/s/files/1/0648/3066/9017/files/81PwRPrpOHL._SL1500_360x.jpg?v=1712571908" alt="Book 2"></div>
+                <div class="book-item"><img src="https://www.crossword.in/cdn/shop/files/714JNsODlGL_460x@2x.jpg?v=1691133779" alt="Book 3"></div>
+                <div class="book-item"><img src="https://www.crossword.in/cdn/shop/files/712zD1rKTUL._SY466_360x@2x.jpg?v=1723195800" alt="Book 4"></div>
+                <div class="book-item"><img src="https://cdn.shopify.com/s/files/1/0648/3066/9017/products/getimage_c95532ea-237d-426a-8f07-b1e5c20336c1_360x.jpg?v=1678842264" alt="Book 5"></div>
+                <div class="book-item"><img src="https://www.crossword.in/cdn/shop/files/81BWZWQXScL._SL1500_460x@2x.jpg?v=1717562268" alt="Book 6"></div>
+                <div class="book-item"><img src="https://cdn.shopify.com/s/files/1/0648/3066/9017/files/41THiODNX5L_360x.jpg?v=1700558063" alt="Book 7"></div>
+                <div class="book-item"><img src="https://cdn.shopify.com/s/files/1/0648/3066/9017/products/81oi3hmPF7L_1268d03e-edc0-4277-b669-a34d315bf810_360x.jpg?v=1684137823" alt="Book 8"></div>
+                <div class="book-item"><img src="https://www.crossword.in/cdn/shop/products/getimage_810e60e4-9193-4014-8229-8e209e1a1040_460x@2x.jpg?v=1678453771" alt="Book 9"></div>
+                <div class="book-item"><img src="https://www.crossword.in/cdn/shop/files/811w76cZglL_460x@2x.jpg?v=1692169265" alt="Book 10"></div>
+            </div>
+            <button class="carousel-prev">&#10094;</button>
+            <button class="carousel-next" onclick="nextSlide()">&#10095;</button>
+        </div>
+    </section>
+    
+    <section id="about" >
+        <h1 style="text-align: center;">About Us</h1>
+        <center>
+        <p>Welcome to our Book Recommdator Website, a place dedicated to helping readers discover their next unforgettable read. We believe that books hold the power to inspire, inform, and transform, and we aim to make the journey of finding the perfect book as enjoyable as the reading itself. Our platform offers personalized book recommendations that cater to your unique tastes and preferences, whether you love thrilling mysteries, heartwarming romances, thought-provoking non-fiction, or magical adventures. We curate a wide range of categories, allowing you to dive into genres like Fiction, Fantasy, Self-Help, and Historical Fiction to broaden your reading horizons.
+
+            In addition to personalized recommendations, our community-driven reviews and ratings allow you to gain insights from fellow book lovers, helping you make informed choices. Through handpicked lists, including bestsellers, award winners, and hidden gems, you can easily explore and discover quality books selected with care. Our vision is simple: to create a space where readers can connect, explore, and grow through the world of books. Whether you’re a lifelong reader or new to the world of literature, we’re here to guide you in finding books that speak to you. Join us in celebrating the joy of reading and let’s discover great stories together!</p>
+        </center>
+        </section>
+    
+    <footer>
+     
+        <p>@copyright! All copyrights are reserved to satyam</p>
+    
+    </footer>
+</body>
+</html>

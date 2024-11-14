@@ -22,8 +22,11 @@ def recommendation():
 @app.route('/recommend_books', methods=['post'])
 def recommend():
     user_input = request.form.get('user_input')
+    num_books = int(request.form.get('num_books'))
+    print(user_input)
+    print(num_books)
     index = np.where(pt.index == user_input)[0][0]
-    similar_items = sorted(list(enumerate(similarity_scores[index])), key=lambda x: x[1], reverse=True)[1:9]
+    similar_items = sorted(list(enumerate(similarity_scores[index])), key=lambda x: x[1], reverse=True)[0:num_books]
     data = []
     for i in similar_items:
         item = []
@@ -35,4 +38,4 @@ def recommend():
     return render_template('recommend.html', data=data)
 
 if __name__ == "__main__":
-    app.run(debug=True, port=5001)
+    app.run(debug=True, port=5002)

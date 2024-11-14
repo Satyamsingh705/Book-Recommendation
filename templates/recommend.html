@@ -25,34 +25,41 @@
             <div class="col-md-12">
                 <h1 class="text-white" style="font-size:50px; color:#B59F78">Recommend Books</h1>
                 <form action="/recommend_books" method="post">
-                    <input name="user_input" type="text" placeholder="Enter your book name here" class="form-control" list="book-suggestions"><br>
+                    <div class="row">
+                        <div class="col-md-8">
+                            <input name="user_input" type="text" placeholder="Enter your book name here" class="form-control" list="book-suggestions" required>
+                        </div>
+                        <div class="col-md-4">
+                            <input type="number" name="num_books" placeholder="Number of books to recommend" class="form-control" min="1" max="80" required>
+                        </div>
+                    </div>
+                    <br>
                     <datalist id="book-suggestions">
                         <option value="Harry Potter and the Goblet of Fire (Book 4)">
                         <option value="Back Roads">
                         <option value="Bel Canto: A Novel">
                         <option value="Black House">
-                            <option value="Black Notice">
-                                <option value="Brave New World">
-                                    <option value="Bridget Jones : The Edge of Reason">
-                                        <option value="CAT'S EYE">
-                                            <option value="Carolina Moon">
-                                                <option value="Chocolat">
-                                                    <option value="Choke">
-
-                               
+                        <option value="Black Notice">
+                        <option value="Brave New World">
+                        <option value="Bridget Jones : The Edge of Reason">
+                        <option value="CAT'S EYE">
+                        <option value="Carolina Moon">
+                        <option value="Chocolat">
+                        <option value="Choke">
                         <option value="1984">
                         <option value="Heart of the Sea (Irish Trilogy)">
-                            <option value="Heartbreaker">
-                            <option value="Hemlock Bay">
-                            <option value="Here on Earth">
-                            <option value="Hideaway">
-                            <option value="Homecoming">
-                            <option value="About a Boy">
+                        <option value="Heartbreaker">
+                        <option value="Hemlock Bay">
+                        <option value="Here on Earth">
+                        <option value="Hideaway">
+                        <option value="Homecoming">
+                        <option value="About a Boy">
                     </datalist>
                     <input type="submit" class="btn btn-lg btn-warning">
                 </form>
             </div>
-
+        </div>
+        <div class="row">
             {% if data %}
                 {% for i in data %}
                     <div class="col-md-3" style="margin-top:50px;">
@@ -64,6 +71,9 @@
                             </div>
                         </div>
                     </div>
+                    {% if loop.index % 4 == 0 %}
+                        </div><div class="row">
+                    {% endif %}
                 {% endfor %}
             {% endif %}
         </div>

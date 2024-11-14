@@ -110,18 +110,12 @@ h1, h2, h3 {
 
 footer {
     background-color: #80BCBD;
-
-   
-   min-height: auto; /* Set the height of the footer */
+    min-height: auto; /* Set the height of the footer */
     width: 100%;
     justify-content: center;
     text-align: center;
-  
     position: relative;
     margin-top: auto;
-    
-  
- 
 }
 
 /* Animation for text */
@@ -181,90 +175,55 @@ footer {
         padding: 6px;
     }
 }
-a{
+
+a {
     background-color: #80BCBD;
 }
 
-#trending{
+#trending {
     margin-left: 10px;
-
 }
 
 .book-carousel {
-    position: relative;
-    width: 100%;
-    overflow: hidden;
-    min-height: max-content;
+    overflow-x: auto;
+    white-space: nowrap;
+    padding: 10px;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+.book-carousel::-webkit-scrollbar {
+    display: none;  /* Chrome, Safari, and Opera */
 }
 
 .book-carousel-inner {
-    display: flex;
-    transition: transform 0.5s ease;
+    display: inline-block;
 }
 
 .book-item {
-    min-width: 20%; /* Show 5 books at a time */
-    box-sizing: border-box;
-    padding: 10px;
+    display: inline-block;
+    width: 180px; /* Adjust the width as needed */
+    height: 240px; /* Adjust the height as needed */
+    margin-right: 10px;
 }
 
 .book-item img {
     width: 100%;
-    height: auto;
-    display: block;
-}
-
-.carousel-prev, .carousel-next {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-}
-
-.carousel-prev {
-    left: 10px;
-}
-
-.carousel-next {
-    right: 10px;
-}
-
-@media (max-width: 768px) {
-    .book-item {
-        min-width: 50%; /* Show 2 books at a time on smaller screens */
-    }
-}
-
-@media (max-width: 480px) {
-    .book-item {
-        min-width: 100%; /* Show 1 book at a time on very small screens */
-    }
-}
-
-.book-item img {
-    width: 100%;
-   /* Set a fixed height for the images */
-    object-fit: cover; /* Maintain aspect ratio and cover the area */
+    height: 100%;
+    object-fit: cover; /* Ensure the image covers the entire area without distortion */
     display: block;
     border-radius: 10px;
-}
-
-.book-item img {
     transition: transform 0.1s ease;
 }
 
 .book-item img:hover {
     transform: scale(1.05);
 }
-#about{
-        background-color: #B9E5E8;
-        font-style: italic;
+
+#about {
+    background-color: #B9E5E8;
+    font-style: italic;
     font-weight: bold;
     font-display: serif;
     fill-opacity: inherit;
 }
-

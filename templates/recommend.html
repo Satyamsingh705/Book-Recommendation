@@ -10,21 +10,31 @@
     .text-white {
         color: white;
     }
+    .loading {
+        display: none;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 1000;
+    }
+    .loading img {
+        width: 100%; 
+        height: 100%;
+    }
 </style>
 <body style="background-color:#D8DBBD">
-
     <nav class="navbar" style="background-color:#FAF6E3">
         <a class="navbar-brand" style="font-size: large; color: Black;"><b>My Book recommender</b></a>
         <ul class="nav navbar-nav">
             <li><a href="/" style="font-size: large; color:Black;"><b>Home</b></a></li>
         </ul>
     </nav>
-
     <div class="container">
         <div class="row">
             <div class="col-md-12">
                 <h1 class="text-white" style="font-size:50px; color:#B59F78">Recommend Books</h1>
-                <form action="/recommend_books" method="post">
+                <form id="recommend-form" action="/recommend_books" method="post">
                     <div class="row">
                         <div class="col-md-8">
                             <input name="user_input" type="text" placeholder="Enter your book name here" class="form-control" list="book-suggestions" required>
@@ -59,7 +69,10 @@
                 </form>
             </div>
         </div>
-        <div class="row">
+        <div class="loading">
+            <img src="{{ url_for('static', filename='loading.gif') }}" alt="Loading...">
+        </div>
+        <div id="recommendations-container" class="row">
             {% if data %}
                 {% for i in data %}
                     <div class="col-md-3" style="margin-top:50px;">
@@ -78,6 +91,13 @@
             {% endif %}
         </div>
     </div>
-
+    <script>
+        document.getElementById('recommend-form').addEventListener('submit', function() {
+            // Clear previous recommendations
+            document.getElementById('recommendations-container').innerHTML = '';
+            // Show loading GIF
+            document.querySelector('.loading').style.display = 'block';
+        });
+    </script>
 </body>
 </html>

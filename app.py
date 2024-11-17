@@ -23,8 +23,6 @@ def recommendation():
 def recommend():
     user_input = request.form.get('user_input')
     num_books = int(request.form.get('num_books'))
-    print(user_input)
-    print(num_books)
     index = np.where(pt.index == user_input)[0][0]
     similar_items = sorted(list(enumerate(similarity_scores[index])), key=lambda x: x[1], reverse=True)[0:num_books]
     data = []

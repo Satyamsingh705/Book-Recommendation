@@ -227,3 +227,15 @@ a {
     font-display: serif;
     fill-opacity: inherit;
 }
+.book-item img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+@media (max-width: 768px) {
+    .book-item {
+        width: 100px; /* Adjust the width for smaller screens */
+        height: 150px; /* Adjust the height for smaller screens */
+    }
+}

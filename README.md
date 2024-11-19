@@ -9,6 +9,8 @@ A Book Recommendation System that provides personalized book suggestions to user
 
 ---
 
+Dataset : https://www.kaggle.com/datasets/arashnic/book-recommendation-dataset
+
 ## Project Structure
 ```plaintext
 ├── templates/
